@@ -1,0 +1,16 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col col-6 mx-auto mt-4">
+      <form (ngSubmit)="login(f)" #f="ngForm" class="w-50 mx-auto text-center">
+        <input type="text" class="form-control mb-2"
+        placeholder="Username" name="username" [(ngModel)]="username">
+
+        <input type="password" class="form-control mb-2"
+        placeholder="Password" name="cognome" [(ngModel)]="password">
+
+        <button class="btn btn-primary">Login</button>
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col col-6 mx-auto mt-4 border border-3 rounded p-5">
+      <form [formGroup]="form" >
+
+        <div formGroupName="authData" class="row g-3">
+          <input type="text" placeholder="Name" formControlName="name">
+          <span *ngIf="!isValid('authData.name') && isTouched('authData.name')" class="form-control  " >Insert Name</span>
+
+          <input type="text" placeholder="Surname" formControlName="surname">
+          <span *ngIf="!isValid('authData.surname') && isTouched('authData.surname')" class="form-control  ">Insert Surname</span>
+
+          <input type="password" placeholder="Password" formControlName="password">
+          <span *ngIf="!isValid('authData.password') && isTouched('authData.password')" class="form-control  ">Insert Password</span>
+
+          <input type="password" placeholder="Repeat Password" formControlName="confirmPassword">
+          <span *ngIf="!isValid('authData.confirmPassword') && isTouched('authData.confirmPassword')" class="form-control  ">Repeat Password</span>
+          <div *ngIf="passwordError!=''">{{passwordError}}</div>
+        </div>
+
+        <div class="row g-3 mt-1">
+          <input type="username" placeholder="Username" class="my-3" formControlName="username">
+          <select name="gender" class="my-3" formControlName="gender">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+          <input type="textarea" placeholder="Biography" class="my-3" formControlName="biography">
+          <input type="file" placeholder="Profile Image" class="my-3" formControlName="profileImg">
+        </div>
+        <div class="col col-2 mx-auto">
+        <button class="btn btn-primary" (click)="send()">Register</button>
+      </div>
+      </form>
+
+    </div>
+  </div>
+</div>
